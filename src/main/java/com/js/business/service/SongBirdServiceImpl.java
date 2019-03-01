@@ -2,14 +2,14 @@ package com.js.business.service;
 
 import javax.inject.Inject;
 
-import com.js.persistence.repository.SongBirdAccountRepository;
+import com.js.persistence.repository.SongBirdRepository;
 import com.js.util.JSONUtil;
 
 
 public class SongBirdServiceImpl implements SongBirdService {
 
 	@Inject 
-	private SongBirdAccountRepository songBird;
+	private SongBirdRepository songBird;
 	
 	@Inject	
 	private JSONUtil util;

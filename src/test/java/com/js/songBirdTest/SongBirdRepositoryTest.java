@@ -6,20 +6,20 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.js.persistence.repository.SongBirdAccountMapRepository;
-import com.js.persistence.repository.SongBirdAccountRepository;
+import com.js.persistence.repository.SongBirdMapRepository;
+import com.js.persistence.repository.SongBirdRepository;
 import com.js.util.JSONUtil;
 
 
-public class SongBirdAccountRepositoryTest {
+public class SongBirdRepositoryTest {
 
-	private SongBirdAccountRepository repo;
+	private SongBirdRepository repo;
 	private JSONUtil util;
 
 	@Before
 	public void setup() {
 		util = new JSONUtil();
-		repo = new SongBirdAccountMapRepository();
+		repo = new SongBirdMapRepository();
 		
 		repo.createAccount(
 				"{\"userName\": 1, \"firstName\": \"Phil\", \"lastName\": \"Jerry\"}");

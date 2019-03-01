@@ -11,7 +11,7 @@ import com.js.util.JSONUtil;
 
 
 @Alternative
-public class SongBirdAccountMapRepository implements SongBirdAccountRepository {
+public class SongBirdMapRepository implements SongBirdRepository {
 
 	Map<String, SongBirdAccount> accountMap = new HashMap<String, SongBirdAccount>();
 
