@@ -24,18 +24,18 @@ public class SongBirdLibraryServiceImpl {
 		return songBird.createASong(account);
 	}
 
-	public String getAnAccount(String userName) {
+	public String getAnAccount(Long songId) {
 
-		return songBird.getASong(userName);
+		return songBird.getASong(songId);
 	}
 
-	public String deleteAccount(String userName) {
+	public String deleteAccount(Long songId) {
 		
-		return songBird.deleteASong(userName);
+		return songBird.deleteASong(songId);
 	}
 
-	public String updateAccount(String userName, String account) {
-		return songBird.updateASong(userName, account);
+	public String updateAccount(Long songId, String account) {
+		return songBird.updateASong(songId, account);
 	}
 
 }

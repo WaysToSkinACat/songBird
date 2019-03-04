@@ -6,9 +6,9 @@ public interface SongBirdLibraryRepository {
 	
 	String createASong(String song);
 	
-	String getASong(String songId);
+	String getASong(Long songId);
 	
-	String deleteASong(String songId);
+	String deleteASong(Long songId);
 
-	String updateASong(String songId, String song);
+	String updateASong(Long songId, String song);
 }

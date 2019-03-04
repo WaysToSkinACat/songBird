@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class SongBirdAccount {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	@Column(length = 15)
+	@Column(name="userName", unique=true, columnDefinition = "VARCHAR(15)")
 	private String userName;
 	@Column(length = 50)
 	private String firstName;

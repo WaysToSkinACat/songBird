@@ -19,7 +19,7 @@ public class SongBirdLibrary {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(length = 15)
-	private Long songID;
+	private Long songId;
 	@Column(length = 50)
 	private String songName;
 	@Column(length = 3)
@@ -29,9 +29,9 @@ public class SongBirdLibrary {
 	
 	private String userName;
 
-	public SongBirdLibrary(Long songID, String songName, int bPM, String description) {
+	public SongBirdLibrary(Long songId, String songName, int bPM, String description) {
 
-		this.songID = songID;
+		this.songId = songId;
 		this.songName = songName;
 		this.bPM = bPM;
 		this.description = description;
@@ -41,22 +41,21 @@ public class SongBirdLibrary {
 
 	}
 
-	public SongBirdLibrary(Long songID, String songName, int bPM, String description, List<SongBirdAccount> trainees,
-			List<SongBirdAccount> account) {
-		super();
-		this.songID = songID;
-		this.songName = songName;
-		this.bPM = bPM;
-		this.description = description;
+//	public SongBirdLibrary(Long songID, String songName, int bPM, String description, List<SongBirdLibrary> account) {
+//
+//		this.songId = songId;
+//		this.songName = songName;
+//		this.bPM = bPM;
+//		this.description = description;
+//
+//	}
 
+	public Long getSongId() {
+		return songId;
 	}
 
-	public Long getSongID() {
-		return songID;
-	}
-
-	public void setSongID(Long songID) {
-		this.songID = songID;
+	public void setSongId(Long songId) {
+		this.songId = songId;
 	}
 
 	public String getSongName() {

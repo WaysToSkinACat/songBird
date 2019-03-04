@@ -34,7 +34,7 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 
 	}
 
-
+	@Override
 	@Transactional(REQUIRED)
 		public String createASong(String song) {
 		SongBirdAccount anAccount = util.getObjectForJSON(song, SongBirdAccount.class);
@@ -44,13 +44,13 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 	
 		
 	@Override
-	public String getASong(String songId) {
+	public String getASong(Long songId) {
 		return util.getJSONForObject(manager.find(SongBirdAccount.class, songId));
 		}
 
 	@Override
 	@Transactional(REQUIRED)
-	public String deleteASong(String songId) {
+	public String deleteASong(Long songId) {
 		if (manager.contains(manager.find(SongBirdAccount.class, songId))) {
 			manager.remove(manager.find(SongBirdAccount.class, songId));
 			return "{\"message\": \"account has been sucessfully deleted\"}";
@@ -61,7 +61,7 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 
 	@Override
 	@Transactional(REQUIRED)
-	public String updateASong(String songId, String song) {
+	public String updateASong(Long songId, String song) {
 		if (manager.contains(manager.find(SongBirdAccount.class, songId))) {
 			return "{\"message\": \"account has been sucessfully deleted\"}";
 		}		
