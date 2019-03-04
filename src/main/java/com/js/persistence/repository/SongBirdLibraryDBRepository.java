@@ -29,7 +29,7 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 	
 	@Override
 	public String getAllSongs() {
-	Query query = manager.createQuery("SELECT a FROM Account a");
+	Query query = manager.createQuery("SELECT a FROM SongBirdLibrary a");
 	return util.getJSONForObject((Collection<SongBirdLibrary>) query.getResultList());
 
 	}

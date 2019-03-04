@@ -28,7 +28,7 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	
 	@Override
 	public String getAllAccounts() {
-		Query query = em.createQuery("SELECT a FROM Account a");
+		Query query = em.createQuery("SELECT a FROM SongBirdAccount a");
 		return util.getJSONForObject((Collection<SongBirdAccount>) query.getResultList());
 	}
 	

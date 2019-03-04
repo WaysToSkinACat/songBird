@@ -9,8 +9,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import org.apache.log4j.Logger;
-
 import com.js.business.service.SongBirdService;
 
 
