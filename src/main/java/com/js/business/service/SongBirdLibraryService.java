@@ -1,14 +1,19 @@
 package com.js.business.service;
 
+import com.js.persistence.repository.SongBirdLibraryRepository;
+
 public interface SongBirdLibraryService {
 	
 	String getAllSongs();
 	
-	String createASong(String account);
+	String createASong(String song);
 	
-	String getASong(String userName);
+	String getASong(Long userName);
 	
-	String deleteASong(String userName);
+	String deleteASong(Long userName);
 
-	String updateASong(String userName, String account);
+	String updateASong(Long userName, String song);
+	
+	void setRepository(SongBirdLibraryRepository repo);
+	
 }

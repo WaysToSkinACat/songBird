@@ -29,9 +29,8 @@ public class SongBirdLibrary {
 	
 	private String userName;
 
-	public SongBirdLibrary(Long songId, String songName, int bPM, String description) {
+	public SongBirdLibrary( String songName, int bPM, String description) {
 
-		this.songId = songId;
 		this.songName = songName;
 		this.bPM = bPM;
 		this.description = description;

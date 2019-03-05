@@ -5,8 +5,8 @@ INSERT INTO SONGBIRDLIBRARY (songId, songName, bPM, description) VALUES (DEFAULT
 
 
 
-INSERT INTO SONGBIRDACCOUNT (userName, firstName, lastName) VALUES ('billy', 'John', 'Gordon')
-INSERT INTO SONGBIRDACCOUNT (userName, firstName, lastName) VALUES ('billy2', 'Matt', 'Hunt')
+INSERT INTO SONGBIRDACCOUNT (userName, firstName, lastName, songId) VALUES ('billy', 'John', 'Gordon',1)
+INSERT INTO SONGBIRDACCOUNT (userName, firstName, lastName, songId) VALUES ('billy2', 'Matt', 'Hunt',1 )
 
 
 

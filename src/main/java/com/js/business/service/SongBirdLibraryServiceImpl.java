@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import com.js.persistence.repository.SongBirdLibraryRepository;
 import com.js.util.JSONUtil;
 
-public class SongBirdLibraryServiceImpl {
+public class SongBirdLibraryServiceImpl implements SongBirdLibraryService{
 
 	@Inject 
 	private SongBirdLibraryRepository songBird;
@@ -13,29 +13,38 @@ public class SongBirdLibraryServiceImpl {
 	@Inject	
 	private JSONUtil util;
 	
-	
-	public String getAllAccounts() {
+	@Override
+	public String getAllSongs() {
 		
 		return songBird.getAllSongs();
 	}
+	
+	@Override
+	public String createASong(String song) {
 
-	public String createAccount(String account) {
-
-		return songBird.createASong(account);
+		return songBird.createASong(song);
 	}
-
-	public String getAnAccount(Long songId) {
+	
+	@Override
+	public String getASong(Long songId) {
 
 		return songBird.getASong(songId);
 	}
-
-	public String deleteAccount(Long songId) {
+	
+	@Override
+	public String deleteASong(Long songId) {
 		
 		return songBird.deleteASong(songId);
 	}
+	@Override
+	public String updateASong(Long songId, String song) {
+		return songBird.updateASong(songId, song);
+	}
 
-	public String updateAccount(Long songId, String account) {
-		return songBird.updateASong(songId, account);
+	@Override
+	public void setRepository(SongBirdLibraryRepository songBird) {
+		this.songBird = songBird;
+		
 	}
 
 }

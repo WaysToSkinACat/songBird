@@ -14,6 +14,21 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class SongBirdAccount {
+	
+	public SongBirdAccount() {
+		
+	}
+	
+	@OneToMany(mappedBy = "userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<SongBirdLibrary> songs = new ArrayList<SongBirdLibrary>();
+	
+	public SongBirdAccount(String userName, String firstName, String lastName) {
+
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
 	@Id
 	@Column(name="userName", unique=true, columnDefinition = "VARCHAR(15)")
 	private String userName;
@@ -23,20 +38,6 @@ public class SongBirdAccount {
 	private String lastName;
 	
 	
-	
-	public SongBirdAccount() {
-		
-	}
-	
-	@OneToMany(mappedBy = "songId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<SongBirdLibrary> songs = new ArrayList<SongBirdLibrary>();
-	
-	public SongBirdAccount(String userName, String firstName, String lastName) {
-
-		this.userName = userName;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
 
 	public String getuserName() {
 		return userName;

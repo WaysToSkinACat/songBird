@@ -1,5 +1,7 @@
 package com.js.business.service;
 
+import com.js.persistence.repository.SongBirdRepository;
+
 public interface SongBirdService {
 
 	String getAllAccounts();
@@ -11,5 +13,7 @@ public interface SongBirdService {
 	String deleteAccount(String userName);
 
 	String updateAccount(String userName, String account);
+	
+	void setRepository(SongBirdRepository repo);
 	
 }
