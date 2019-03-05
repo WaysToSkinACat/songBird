@@ -7,20 +7,20 @@ import java.util.stream.Collectors;
 import javax.enterprise.inject.Alternative;
 import javax.persistence.EntityManager;
 
-import com.js.persistence.domain.SongBirdAccount;
+import com.js.persistence.domain.Account;
 import com.js.util.JSONUtil;
 
 
 @Alternative
 public class SongBirdMapRepository implements SongBirdRepository {
 
-	Map<String, SongBirdAccount> accountMap = new HashMap<String, SongBirdAccount>();
+	Map<String, Account> accountMap = new HashMap<String, Account>();
 
-	public Map<String, SongBirdAccount> getAccountMap() {
+	public Map<String, Account> getAccountMap() {
 		return accountMap;
 	}
 
-	public void setAccountMap(Map<String, SongBirdAccount> accountMap) {
+	public void setAccountMap(Map<String, Account> accountMap) {
 		this.accountMap = accountMap;
 	}
 
@@ -32,7 +32,7 @@ public class SongBirdMapRepository implements SongBirdRepository {
 	}
 
 	public String createAccount(String account) {
-		SongBirdAccount anAccount = util.getObjectForJSON(account, SongBirdAccount.class);
+		Account anAccount = util.getObjectForJSON(account, Account.class);
 		accountMap.put(anAccount.getuserName(), anAccount);
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
@@ -46,7 +46,7 @@ public class SongBirdMapRepository implements SongBirdRepository {
 	}
 
 	public String updateAccount(String userName, String account) {
-		SongBirdAccount anAccount = util.getObjectForJSON(account, SongBirdAccount.class);
+		Account anAccount = util.getObjectForJSON(account, Account.class);
 		if (accountMap.get(userName) != null) {
 			accountMap.put(userName, anAccount);
 			return "{\"message\": \"account has been sucessfully updated\"}";

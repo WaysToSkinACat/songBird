@@ -1,53 +1,57 @@
 package com.js.persistence.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Column;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Table
 @Entity
-public class SongBirdLibrary {
+public class Song {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(length = 15)
 	private Long songId;
+	
 	@Column(length = 50)
 	private String songName;
+	
 	@Column(length = 3)
 	private int bPM;
+	
 	@Column(length = 255)
 	private String description;
 	
-	private String userName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userName")
+	private Account userName;
 
-	public SongBirdLibrary( String songName, int bPM, String description) {
+	public Song(String songName, int bPM, String description) {
 
 		this.songName = songName;
 		this.bPM = bPM;
 		this.description = description;
 	}
 
-	public SongBirdLibrary() {
+	public Song() {
 
 	}
 
-//	public SongBirdLibrary(Long songID, String songName, int bPM, String description, List<SongBirdLibrary> account) {
-//
-//		this.songId = songId;
-//		this.songName = songName;
-//		this.bPM = bPM;
-//		this.description = description;
-//
-//	}
+	// public SongBirdLibrary(Long songID, String songName, int bPM, String
+	// description, List<SongBirdLibrary> account) {
+	//
+	// this.songId = songId;
+	// this.songName = songName;
+	// this.bPM = bPM;
+	// this.description = description;
+	//
+	// }
 
 	public Long getSongId() {
 		return songId;
@@ -81,11 +85,11 @@ public class SongBirdLibrary {
 		this.description = description;
 	}
 
-	public String getUserName() {
+	public Account getUserName() {
 		return userName;
 	}
 
-	public void setUserName(String userName) {
+	public void setUserName(Account userName) {
 		this.userName = userName;
 	}
 

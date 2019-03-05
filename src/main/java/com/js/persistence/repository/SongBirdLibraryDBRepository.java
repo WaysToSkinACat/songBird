@@ -12,8 +12,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import com.js.persistence.domain.SongBirdAccount;
-import com.js.persistence.domain.SongBirdLibrary;
+import com.js.persistence.domain.Account;
+import com.js.persistence.domain.Song;
 import com.js.util.JSONUtil;
 
 
@@ -30,14 +30,14 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 	@Override
 	public String getAllSongs() {
 	Query query = manager.createQuery("SELECT a FROM SongBirdLibrary a");
-	return util.getJSONForObject((Collection<SongBirdLibrary>) query.getResultList());
+	return util.getJSONForObject((Collection<Song>) query.getResultList());
 
 	}
 
 	@Override
 	@Transactional(REQUIRED)
 		public String createASong(String song) {
-		SongBirdAccount anAccount = util.getObjectForJSON(song, SongBirdAccount.class);
+		Account anAccount = util.getObjectForJSON(song, Account.class);
 		manager.persist(anAccount);
 		return "{\"message\": \"Song has been sucessfully added\"}";
 	}
@@ -45,14 +45,14 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 		
 	@Override
 	public String getASong(Long songId) {
-		return util.getJSONForObject(manager.find(SongBirdAccount.class, songId));
+		return util.getJSONForObject(manager.find(Account.class, songId));
 		}
 
 	@Override
 	@Transactional(REQUIRED)
 	public String deleteASong(Long songId) {
-		if (manager.contains(manager.find(SongBirdAccount.class, songId))) {
-			manager.remove(manager.find(SongBirdAccount.class, songId));
+		if (manager.contains(manager.find(Account.class, songId))) {
+			manager.remove(manager.find(Account.class, songId));
 			return "{\"message\": \"account has been sucessfully deleted\"}";
 		}
 		return "{\"message\": \"no such account\"}";
@@ -62,7 +62,7 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 	@Override
 	@Transactional(REQUIRED)
 	public String updateASong(Long songId, String song) {
-		if (manager.contains(manager.find(SongBirdAccount.class, songId))) {
+		if (manager.contains(manager.find(Account.class, songId))) {
 			return "{\"message\": \"account has been sucessfully deleted\"}";
 		}		
 		return "{\"message\": \"no such account\"}";

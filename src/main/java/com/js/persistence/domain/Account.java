@@ -7,37 +7,37 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Table
 @Entity
-public class SongBirdAccount {
-	
-	public SongBirdAccount() {
-		
-	}
-	
-	@OneToMany(mappedBy = "userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<SongBirdLibrary> songs = new ArrayList<SongBirdLibrary>();
-	
-	public SongBirdAccount(String userName, String firstName, String lastName) {
+public class Account {
 
+	public Account() {
+
+	}
+
+	@OneToMany(mappedBy="userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Song> songs = new ArrayList<Song>();
+
+	public Account(String userName, String firstName, String lastName) {
 		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
 	@Id
-	@Column(name="userName", unique=true, columnDefinition = "VARCHAR(15)")
+	@Column(unique = true, columnDefinition = "VARCHAR(15)")
 	private String userName;
+
 	@Column(length = 50)
 	private String firstName;
+
 	@Column(length = 50)
 	private String lastName;
-	
-	
 
 	public String getuserName() {
 		return userName;
@@ -63,14 +63,12 @@ public class SongBirdAccount {
 		this.lastName = lastName;
 	}
 
-	public List<SongBirdLibrary> getSongs() {
+	public List<Song> getSongs() {
 		return songs;
 	}
 
-	public void setSongs(List<SongBirdLibrary> songs) {
+	public void setSongs(List<Song> songs) {
 		this.songs = songs;
 	}
 
-	
-	
 }

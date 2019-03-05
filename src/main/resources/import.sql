@@ -1,12 +1,14 @@
-INSERT INTO SONGBIRDLIBRARY (songId, songName, bPM, description) VALUES (DEFAULT, 'Phil',75, 'Jerry' )
-INSERT INTO SONGBIRDLIBRARY (songId, songName, bPM, description) VALUES (DEFAULT, 'Ella',120, 'Jerry')
-INSERT INTO SONGBIRDLIBRARY (songId, songName, bPM, description) VALUES (DEFAULT, 'Ella',140, 'Jerry')
-INSERT INTO SONGBIRDLIBRARY (songId, songName, bPM, description) VALUES (DEFAULT, 'Sam',160, 'Fisher')
+INSERT INTO ACCOUNT (userName, firstName, lastName) VALUES ('billy', 'John', 'Gordon');
+INSERT INTO ACCOUNT (userName, firstName, lastName) VALUES ('billy2', 'Matt', 'Hunt');
+
+INSERT INTO SONG (songId, songName, bPM, description, userName) VALUES (DEFAULT, 'Phil',75, 'Jerry', 'billy' );
+INSERT INTO SONG (songId, songName, bPM, description, userName) VALUES (DEFAULT, 'Ella',120, 'Jerry', 'billy');
+INSERT INTO SONG (songId, songName, bPM, description, userName) VALUES (DEFAULT, 'Ella',140, 'Jerry', 'billy2');
+INSERT INTO SONG (songId, songName, bPM, description, userName) VALUES (DEFAULT, 'Sam',160, 'Fisher', 'billy2');
 
 
 
-INSERT INTO SONGBIRDACCOUNT (userName, firstName, lastName, songId) VALUES ('billy', 'John', 'Gordon',1)
-INSERT INTO SONGBIRDACCOUNT (userName, firstName, lastName, songId) VALUES ('billy2', 'Matt', 'Hunt',1 )
+
 
 
 

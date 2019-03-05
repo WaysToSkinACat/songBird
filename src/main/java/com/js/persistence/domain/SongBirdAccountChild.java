@@ -1,6 +1,6 @@
 package com.js.persistence.domain;
 
-public class SongBirdAccountChild extends SongBirdAccount{
+public class SongBirdAccountChild extends Account{
 
 	
 	

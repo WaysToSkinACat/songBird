@@ -7,20 +7,20 @@ import java.util.stream.Collectors;
 import javax.enterprise.inject.Alternative;
 import javax.persistence.EntityManager;
 
-import com.js.persistence.domain.SongBirdLibrary;
+import com.js.persistence.domain.Song;
 import com.js.util.JSONUtil;
 
 
 @Alternative
 public class SongBirdLibraryMapRepository implements SongBirdLibraryRepository {
 
-	Map<Long, SongBirdLibrary> songMap = new HashMap<Long, SongBirdLibrary>();
+	Map<Long, Song> songMap = new HashMap<Long, Song>();
 
-	public Map<Long, SongBirdLibrary> getSongMap() {
+	public Map<Long, Song> getSongMap() {
 		return songMap;
 	}
 
-	public void setSongMap(Map<Long, SongBirdLibrary> songMap) {
+	public void setSongMap(Map<Long, Song> songMap) {
 		this.songMap = songMap;
 	}
 
@@ -32,7 +32,7 @@ public class SongBirdLibraryMapRepository implements SongBirdLibraryRepository {
 	}
 
 	public String createASong(String song) {
-		SongBirdLibrary aSong = util.getObjectForJSON(song, SongBirdLibrary.class);
+		Song aSong = util.getObjectForJSON(song, Song.class);
 		songMap.put(aSong.getSongId(), aSong);
 		return "{\"message\": \"song has been sucessfully added\"}";
 	}
@@ -46,7 +46,7 @@ public class SongBirdLibraryMapRepository implements SongBirdLibraryRepository {
 	}
 
 	public String updateASong(Long songId, String song) {
-		SongBirdLibrary aSong = util.getObjectForJSON(song, SongBirdLibrary.class);
+		Song aSong = util.getObjectForJSON(song, Song.class);
 		if (songMap.get(songId) != null) {
 			songMap.put(songId, aSong);
 			return "{\"message\": \"song has been sucessfully updated\"}";
