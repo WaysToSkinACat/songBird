@@ -1,5 +1,9 @@
 package com.js.persistence.repository;
 
+import javax.persistence.EntityManager;
+
+import com.js.util.JSONUtil;
+
 public interface SongBirdLibraryRepository {
 	
 	String getAllSongs();
@@ -11,4 +15,8 @@ public interface SongBirdLibraryRepository {
 	String deleteASong(Long songId);
 
 	String updateASong(Long songId, String song);
+	
+	void setUtil(JSONUtil util);
+
+	void setManager(EntityManager manager);
 }

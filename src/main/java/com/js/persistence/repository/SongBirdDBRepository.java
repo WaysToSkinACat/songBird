@@ -24,6 +24,8 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	
 	@Inject
 	private JSONUtil util;
+
+
 	
 	
 	@Override
@@ -62,6 +64,18 @@ public class SongBirdDBRepository implements SongBirdRepository{
 			return "{\"message\": \"account has been sucessfully deleted\"}";
 		}		
 		return "{\"message\": \"no such account\"}";
+	}
+
+	@Override
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+		
+	}
+
+	@Override
+	public void setManager(EntityManager em) {
+		this.em = em;
+		
 	}
 
 

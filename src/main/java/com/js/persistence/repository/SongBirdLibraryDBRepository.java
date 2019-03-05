@@ -67,6 +67,18 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 		}		
 		return "{\"message\": \"no such account\"}";
 	}
+
+	@Override
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+		
+	}
+
+	@Override
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+		
+	}
 	
 
 }

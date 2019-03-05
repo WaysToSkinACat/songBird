@@ -1,10 +1,16 @@
 package com.js.persistence.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class SongBirdAccount {
@@ -22,6 +28,8 @@ public class SongBirdAccount {
 		
 	}
 	
+	@OneToMany(mappedBy = "songId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<SongBirdLibrary> songs = new ArrayList<SongBirdLibrary>();
 	
 	public SongBirdAccount(String userName, String firstName, String lastName) {
 
@@ -52,6 +60,14 @@ public class SongBirdAccount {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public List<SongBirdLibrary> getSongs() {
+		return songs;
+	}
+
+	public void setSongs(List<SongBirdLibrary> songs) {
+		this.songs = songs;
 	}
 
 	

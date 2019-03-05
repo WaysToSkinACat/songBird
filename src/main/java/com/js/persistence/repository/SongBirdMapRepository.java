@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.enterprise.inject.Alternative;
+import javax.persistence.EntityManager;
 
 import com.js.persistence.domain.SongBirdAccount;
 import com.js.util.JSONUtil;
@@ -24,6 +25,7 @@ public class SongBirdMapRepository implements SongBirdRepository {
 	}
 
 	private JSONUtil util = new JSONUtil();
+	private EntityManager em;
 
 	public String getAllAccounts() {
 		return util.getJSONForObject(accountMap.values());
@@ -62,6 +64,18 @@ public class SongBirdMapRepository implements SongBirdRepository {
 
 	public String getAnAccount(String userName) {
 		return null;
+	}
+
+	@Override
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+		
+	}
+
+	@Override
+	public void setManager(EntityManager em) {
+		this.em = em;
+		
 	}
 
 }
