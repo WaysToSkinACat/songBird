@@ -1,4 +1,4 @@
-package com.js.persistence.repository;
+package qa.com.persistence.repository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import javax.enterprise.inject.Alternative;
 import javax.persistence.EntityManager;
 
-import com.js.persistence.domain.Song;
-import com.js.util.JSONUtil;
+import qa.com.persistence.domain.Song;
+import qa.com.util.JSONUtil;
 
 
 @Alternative

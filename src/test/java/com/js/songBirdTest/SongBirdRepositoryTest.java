@@ -6,9 +6,9 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.js.persistence.repository.SongBirdMapRepository;
-import com.js.persistence.repository.SongBirdRepository;
-import com.js.util.JSONUtil;
+import qa.com.persistence.repository.SongBirdMapRepository;
+import qa.com.persistence.repository.SongBirdRepository;
+import qa.com.util.JSONUtil;
 
 
 public class SongBirdRepositoryTest {

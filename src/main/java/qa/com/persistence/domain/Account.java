@@ -1,4 +1,4 @@
-package com.js.persistence.domain;
+package qa.com.persistence.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,8 @@ public class Account {
 
 	}
 
-	@OneToMany(mappedBy="userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Song> songs = new ArrayList<Song>();
+//	@OneToMany(mappedBy="userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//	private List<Song> songs = new ArrayList<Song>();
 
 	public Account(String userName, String firstName, String lastName) {
 		this.userName = userName;
@@ -63,12 +63,12 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-	public List<Song> getSongs() {
-		return songs;
-	}
-
-	public void setSongs(List<Song> songs) {
-		this.songs = songs;
-	}
+//	public List<Song> getSongs() {
+//		return songs;
+//	}
+//
+//	public void setSongs(List<Song> songs) {
+//		this.songs = songs;
+//	}
 
 }

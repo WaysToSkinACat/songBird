@@ -1,4 +1,4 @@
-package com.js.persistence.domain;
+package qa.com.persistence.domain;
 
 public class SongBirdAccountChild extends Account{
 

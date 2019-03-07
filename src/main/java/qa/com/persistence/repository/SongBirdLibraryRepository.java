@@ -1,8 +1,8 @@
-package com.js.persistence.repository;
+package qa.com.persistence.repository;
 
 import javax.persistence.EntityManager;
 
-import com.js.util.JSONUtil;
+import qa.com.util.JSONUtil;
 
 public interface SongBirdLibraryRepository {
 	

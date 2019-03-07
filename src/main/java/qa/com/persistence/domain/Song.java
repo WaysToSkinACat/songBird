@@ -1,4 +1,4 @@
-package com.js.persistence.domain;
+package qa.com.persistence.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,9 +28,9 @@ public class Song {
 	@Column(length = 255)
 	private String description;
 	
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userName")
-	private Account userName;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "userName")
+//	private Account userName;
 
 	public Song(String songName, int bPM, String description) {
 
@@ -69,11 +69,11 @@ public class Song {
 		this.songName = songName;
 	}
 
-	public int getbPM() {
+	public Integer getbPM() {
 		return bPM;
 	}
 
-	public void setbPM(int bPM) {
+	public void setbPM(Integer bPM) {
 		this.bPM = bPM;
 	}
 
@@ -85,12 +85,12 @@ public class Song {
 		this.description = description;
 	}
 
-	public Account getUserName() {
-		return userName;
-	}
-
-	public void setUserName(Account userName) {
-		this.userName = userName;
-	}
+//	public Account getUserName() {
+//		return userName;
+//	}
+//
+//	public void setUserName(Account userName) {
+//		this.userName = userName;
+//	}
 
 }

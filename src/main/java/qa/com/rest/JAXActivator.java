@@ -1,4 +1,4 @@
-package com.js.rest;
+package qa.com.rest;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

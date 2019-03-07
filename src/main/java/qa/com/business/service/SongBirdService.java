@@ -1,10 +1,8 @@
-package com.js.persistence.repository;
+package qa.com.business.service;
 
-import javax.persistence.EntityManager;
+import qa.com.persistence.repository.SongBirdRepository;
 
-import com.js.util.JSONUtil;
-
-public interface SongBirdRepository {
+public interface SongBirdService {
 
 	String getAllAccounts();
 	
@@ -16,7 +14,6 @@ public interface SongBirdRepository {
 
 	String updateAccount(String userName, String account);
 	
-	void setUtil(JSONUtil util);
-
-	void setManager(EntityManager manager);	
+	void setRepository(SongBirdRepository repo);
+	
 }

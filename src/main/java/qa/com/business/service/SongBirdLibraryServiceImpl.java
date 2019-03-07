@@ -1,9 +1,9 @@
-package com.js.business.service;
+package qa.com.business.service;
 
 import javax.inject.Inject;
 
-import com.js.persistence.repository.SongBirdLibraryRepository;
-import com.js.util.JSONUtil;
+import qa.com.persistence.repository.SongBirdLibraryRepository;
+import qa.com.util.JSONUtil;
 
 public class SongBirdLibraryServiceImpl implements SongBirdLibraryService{
 

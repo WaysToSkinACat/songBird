@@ -1,4 +1,4 @@
-package com.js.util;
+package qa.com.util;
 
 import com.google.gson.Gson;
 

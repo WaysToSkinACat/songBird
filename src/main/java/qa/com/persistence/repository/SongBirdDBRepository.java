@@ -1,4 +1,4 @@
-package com.js.persistence.repository;
+package qa.com.persistence.repository;
 
 import java.util.Collection;
 
@@ -9,8 +9,8 @@ import javax.transaction.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.js.persistence.domain.Account;
-import com.js.util.JSONUtil;
+import qa.com.persistence.domain.Account;
+import qa.com.util.JSONUtil;
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
@@ -30,7 +30,7 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	
 	@Override
 	public String getAllAccounts() {
-		Query query = em.createQuery("SELECT a FROM SongBirdAccount a");
+		Query query = em.createQuery("SELECT a FROM Account a");
 		return util.getJSONForObject((Collection<Account>) query.getResultList());
 	}
 	
@@ -60,8 +60,16 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	@Override
 	@Transactional(REQUIRED)
 	public String updateAccount(String userName, String account) {
+		Account anAccount = util.getObjectForJSON(account, Account.class);
 		if (em.contains(em.find(Account.class, userName))) {
-			return "{\"message\": \"account has been sucessfully deleted\"}";
+			if (anAccount.getFirstName() != null) {
+				em.find(Account.class, userName).setFirstName(anAccount.getFirstName());
+			}
+			if (anAccount.getLastName() != null) {
+				em.find(Account.class, userName).setLastName(anAccount.getLastName());
+			}
+			
+			return "{\"message\": \"account has been sucessfully Updated\"}";
 		}		
 		return "{\"message\": \"no such account\"}";
 	}

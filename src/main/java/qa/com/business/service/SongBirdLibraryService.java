@@ -1,6 +1,6 @@
-package com.js.business.service;
+package qa.com.business.service;
 
-import com.js.persistence.repository.SongBirdLibraryRepository;
+import qa.com.persistence.repository.SongBirdLibraryRepository;
 
 public interface SongBirdLibraryService {
 	
