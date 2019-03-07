@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Table
+
 @Entity
 public class Account {
 
@@ -20,14 +20,17 @@ public class Account {
 
 	}
 
-//	@OneToMany(mappedBy="userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//	private List<Song> songs = new ArrayList<Song>();
 
-	public Account(String userName, String firstName, String lastName) {
+
+	public Account(String userName, String firstName, String lastName, Long songId) {
+
 		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.songId = songId;
 	}
+
+
 
 	@Id
 	@Column(unique = true, columnDefinition = "VARCHAR(15)")
@@ -38,6 +41,9 @@ public class Account {
 
 	@Column(length = 50)
 	private String lastName;
+	
+	private Long songId;
+	
 
 	public String getuserName() {
 		return userName;
@@ -63,12 +69,14 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-//	public List<Song> getSongs() {
-//		return songs;
-//	}
-//
-//	public void setSongs(List<Song> songs) {
-//		this.songs = songs;
-//	}
+	public Long getSongId() {
+		return songId;
+	}
+
+	public void setSongId(Long songId) {
+		this.songId = songId;
+	}
+
+
 
 }

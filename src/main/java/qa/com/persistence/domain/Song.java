@@ -1,5 +1,9 @@
 package qa.com.persistence.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,9 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Table
+
 @Entity
 public class Song {
 
@@ -28,9 +33,9 @@ public class Song {
 	@Column(length = 255)
 	private String description;
 	
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "userName")
-//	private Account userName;
+	@OneToMany(mappedBy = "songId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Account> songs = new ArrayList<Account>();
+
 
 	public Song(String songName, int bPM, String description) {
 
@@ -85,12 +90,14 @@ public class Song {
 		this.description = description;
 	}
 
-//	public Account getUserName() {
-//		return userName;
-//	}
-//
-//	public void setUserName(Account userName) {
-//		this.userName = userName;
-//	}
+	public List<Account> getSongs() {
+		return songs;
+	}
+
+	public void setSongs(List<Account> songs) {
+		this.songs = songs;
+	}
+
+
 
 }
