@@ -27,7 +27,7 @@ public class Account {
 		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.songId = songId;
+
 	}
 
 
@@ -41,10 +41,11 @@ public class Account {
 
 	@Column(length = 50)
 	private String lastName;
-	
-	private Long songId;
-	
 
+	
+	@OneToMany(mappedBy = "userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Song> songs = new ArrayList<Song>();
+	
 	public String getuserName() {
 		return userName;
 	}
@@ -69,12 +70,16 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-	public Long getSongId() {
-		return songId;
+
+
+	public List<Song> getSongs() {
+		return songs;
 	}
 
-	public void setSongId(Long songId) {
-		this.songId = songId;
+
+
+	public void setSongs(List<Song> songs) {
+		this.songs = songs;
 	}
 
 

@@ -19,6 +19,17 @@ import javax.persistence.Table;
 @Entity
 public class Song {
 
+	public Song(String songName, int bPM, String description) {
+
+		this.songName = songName;
+		this.bPM = bPM;
+		this.description = description;
+	}
+	public Song() {
+
+	}
+
+
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(length = 15)
@@ -33,20 +44,10 @@ public class Song {
 	@Column(length = 255)
 	private String description;
 	
-	@OneToMany(mappedBy = "songId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Account> songs = new ArrayList<Account>();
+	private String userName;
 
 
-	public Song(String songName, int bPM, String description) {
 
-		this.songName = songName;
-		this.bPM = bPM;
-		this.description = description;
-	}
-
-	public Song() {
-
-	}
 
 	// public SongBirdLibrary(Long songID, String songName, int bPM, String
 	// description, List<SongBirdLibrary> account) {
@@ -90,12 +91,11 @@ public class Song {
 		this.description = description;
 	}
 
-	public List<Account> getSongs() {
-		return songs;
+	public String getUserName() {
+		return userName;
 	}
-
-	public void setSongs(List<Account> songs) {
-		this.songs = songs;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 
