@@ -30,6 +30,9 @@ public class Account {
 		this.songId = songId;
 	}
 
+	@OneToMany(mappedBy = "songId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Account> songs = new ArrayList<Account>();
+
 
 
 	@Id
@@ -69,12 +72,14 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-	public Long getSongId() {
-		return songId;
+	public List<Account> getSongs() {
+		return songs;
 	}
 
-	public void setSongId(Long songId) {
-		this.songId = songId;
+
+
+	public void setSongs(List<Account> songs) {
+		this.songs = songs;
 	}
 
 

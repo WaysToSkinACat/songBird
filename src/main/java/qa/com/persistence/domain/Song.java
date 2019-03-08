@@ -33,8 +33,7 @@ public class Song {
 	@Column(length = 255)
 	private String description;
 	
-	@OneToMany(mappedBy = "songId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Account> songs = new ArrayList<Account>();
+	private String userName;
 
 
 	public Song(String songName, int bPM, String description) {
@@ -90,13 +89,14 @@ public class Song {
 		this.description = description;
 	}
 
-	public List<Account> getSongs() {
-		return songs;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setSongs(List<Account> songs) {
-		this.songs = songs;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
+
 
 
 
