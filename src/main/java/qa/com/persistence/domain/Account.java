@@ -3,6 +3,7 @@ package qa.com.persistence.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Generated;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Account {
 
 
 
-	public Account(String userName, String firstName, String lastName, Long songId) {
+	public Account(String userName, String firstName, String lastName) {
 
 		this.userName = userName;
 		this.firstName = firstName;
@@ -33,7 +34,7 @@ public class Account {
 
 
 	@Id
-	@Column(unique = true, columnDefinition = "VARCHAR(15)")
+	@Column(name ="userName" ,unique = true, columnDefinition = "VARCHAR(15)")
 	private String userName;
 
 	@Column(length = 50)
