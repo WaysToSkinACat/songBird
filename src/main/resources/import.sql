@@ -1,5 +1,5 @@
-INSERT INTO ACCOUNT (userName, firstName, lastName, password) VALUES ('billy', 'John', 'Gordon', 'p');
-INSERT INTO ACCOUNT (userName, firstName, lastName, password) VALUES ('billy2', 'Matt', 'Hunt', 'p' );
+INSERT INTO ACCOUNT (userName, firstName, lastName, email) VALUES ('billy', 'John', 'Gordon', 'p');
+INSERT INTO ACCOUNT (userName, firstName, lastName, email) VALUES ('billy2', 'Matt', 'Hunt', 'p' );
 
 
 INSERT INTO SONG (songId, songName, bPM, description, tubeLink, userName) VALUES (DEFAULT, 'Phil',75, 'Jerry', 'https://www.youtube.com/', 'billy');
