@@ -40,7 +40,7 @@ public class SongBirdLibraryEndpoint {
 		return services.deleteASong(songId);
 	}
 
-	@Path("/updateASong/{userName}")
+	@Path("/updateASong/{songId}")
 	@PUT
 	@Produces({ "application/json" })
 	public String updateASong(@PathParam("songId") Long songId, String song) {
