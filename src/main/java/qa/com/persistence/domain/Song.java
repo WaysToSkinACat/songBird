@@ -1,30 +1,24 @@
 package qa.com.persistence.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 @Entity
 public class Song {
 
-	public Song(String songName, int bPM, String description) {
 
+	public Song(String songName, Integer bPM, String description, String tubeLink) {
+		super();
 		this.songName = songName;
 		this.bPM = bPM;
 		this.description = description;
+		this.tubeLink = tubeLink;
 	}
+
 	public Song() {
 
 	}
@@ -43,6 +37,9 @@ public class Song {
 	
 	@Column(length = 255)
 	private String description;
+	
+	@Column(length = 255)
+	private String tubeLink;
 	
 	private String userName;
 
@@ -96,6 +93,14 @@ public class Song {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getTubeLink() {
+		return tubeLink;
+	}
+
+	public void setTubeLink(String tubeLink) {
+		this.tubeLink = tubeLink;
 	}
 
 

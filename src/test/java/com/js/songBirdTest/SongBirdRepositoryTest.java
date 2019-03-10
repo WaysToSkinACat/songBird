@@ -30,12 +30,12 @@ public class SongBirdRepositoryTest {
 		repo.createAccount(
 				"{\"userName\": 4, \"firstName\": \"Sam\", \"lastName\": \"Fisher\"}");
 	}
-@Ignore
+
 	@Test
 	public void addAccountTest() {
 		assertNotNull(repo.getAllAccounts());
 	}
-@Ignore
+
 	@Test
 	public void add2AccountsTest() {
 		assertNotNull(repo.getAllAccounts());
@@ -53,7 +53,7 @@ public class SongBirdRepositoryTest {
 		repo.deleteAccount("2");
 		assertNull(repo.getAllAccounts());
 	}
-@Ignore
+
 	@Test
 	public void remove2AccountTestAnd1ThatDoesntExist() {
 		repo.deleteAccount("1");

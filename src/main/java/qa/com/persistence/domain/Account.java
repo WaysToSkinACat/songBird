@@ -3,15 +3,12 @@ package qa.com.persistence.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Generated;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 @Entity
@@ -23,14 +20,13 @@ public class Account {
 
 
 
-	public Account(String userName, String firstName, String lastName) {
-
+	public Account(String userName, String firstName, String lastName, String password) {
+		super();
 		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
-
+		this.password = password;
 	}
-
 
 
 	@Id
@@ -42,6 +38,8 @@ public class Account {
 
 	@Column(length = 50)
 	private String lastName;
+	@Column(length = 50)
+	private String password;
 
 	
 	@OneToMany(mappedBy = "userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -69,6 +67,18 @@ public class Account {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 
