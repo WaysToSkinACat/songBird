@@ -70,12 +70,15 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 			if (aSong.getDescription() != null) {
 				manager.find(Song.class, songId).setDescription(aSong.getDescription());
 			}
+			if (aSong.getTubeLink() != null) {
+				manager.find(Song.class, songId).setTubeLink(aSong.getTubeLink());
+			}
 			if (aSong.getSongName() != null) {
 				manager.find(Song.class, songId).setSongName(aSong.getSongName());
 			}
-//			if (aSong.getUserName() != null) {
-//				manager.find(Song.class, songId).setUserName(aSong.getUserName());
-//			}
+			if (aSong.getUserName() != null) {
+				manager.find(Song.class, songId).setUserName(aSong.getUserName());
+			}
 			return "{\"message\": \"account has been sucessfully Updated\"}";
 		}		
 		return "{\"message\": \"no such account\"}";

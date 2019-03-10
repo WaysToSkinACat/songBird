@@ -20,12 +20,12 @@ public class Account {
 
 
 
-	public Account(String userName, String firstName, String lastName, String password) {
+	public Account(String userName, String firstName, String lastName, String email) {
 		super();
 		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.password = password;
+		this.email = email;
 	}
 
 
@@ -39,17 +39,17 @@ public class Account {
 	@Column(length = 50)
 	private String lastName;
 	@Column(length = 50)
-	private String password;
+	private String email;
 
 	
 	@OneToMany(mappedBy = "userName", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Song> songs = new ArrayList<Song>();
 	
-	public String getuserName() {
+	public String getUserName() {
 		return userName;
 	}
 
-	public void setuserName(String userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
@@ -71,14 +71,14 @@ public class Account {
 
 
 
-	public String getPassword() {
-		return password;
+	public String getEmail() {
+		return email;
 	}
 
 
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

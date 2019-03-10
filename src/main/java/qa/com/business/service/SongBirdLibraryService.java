@@ -8,11 +8,11 @@ public interface SongBirdLibraryService {
 	
 	String createASong(String song);
 	
-	String getASong(Long userName);
+	String getASong(Long songId);
 	
-	String deleteASong(Long userName);
+	String deleteASong(Long songId);
 
-	String updateASong(Long userName, String song);
+	String updateASong(Long songId, String song);
 	
 	void setRepository(SongBirdLibraryRepository repo);
 	

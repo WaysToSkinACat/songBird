@@ -62,11 +62,17 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	public String updateAccount(String userName, String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
 		if (em.contains(em.find(Account.class, userName))) {
+			if (anAccount.getUserName() != null) {
+				em.find(Account.class, userName).setUserName(anAccount.getUserName());
+			}
 			if (anAccount.getFirstName() != null) {
 				em.find(Account.class, userName).setFirstName(anAccount.getFirstName());
 			}
 			if (anAccount.getLastName() != null) {
 				em.find(Account.class, userName).setLastName(anAccount.getLastName());
+			}
+			if (anAccount.getEmail() != null) {
+				em.find(Account.class, userName).setEmail(anAccount.getEmail());
 			}
 			
 			return "{\"message\": \"account has been sucessfully Updated\"}";
