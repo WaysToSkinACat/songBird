@@ -24,7 +24,12 @@ public class SongBirdEndpoint {
 	public String getAllAccounts() {
 		return service.getAllAccounts();
 	}
-
+	@Path("/getATrainee/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getAnAccount(@PathParam("id") String id) {
+		return service.getAnAccount(id);
+	}
 	@Path("/createAccount")
 	@POST
 	@Produces({ "application/json" })
@@ -45,6 +50,14 @@ public class SongBirdEndpoint {
 	public String updateAccount(@PathParam("userName") String userName, String account) {
 		return service.updateAccount(userName, account);
 	}
+
+	public void setService(SongBirdService service2) {
+			
+	}
+
+
+
+
 
 
 }

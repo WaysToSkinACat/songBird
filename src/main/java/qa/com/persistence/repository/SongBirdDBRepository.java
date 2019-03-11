@@ -39,7 +39,7 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	public String createAccount(String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
 		em.persist(anAccount);
-		return "{\"message\": \"account has been sucessfully added\"}";
+		return "{\"message\": \"Account has been sucessfully added\"}";
 	}
 
 	@Override
@@ -52,9 +52,9 @@ public class SongBirdDBRepository implements SongBirdRepository{
 	public String deleteAccount(String userName) {
 		if (em.contains(em.find(Account.class, userName))) {
 			em.remove(em.find(Account.class, userName));
-			return "{\"message\": \"account has been sucessfully deleted\"}";
+			return "{\"message\": \"Account has been sucessfully deleted\"}";
 		}
-		return "{\"message\": \"no such account\"}";
+		return "{\"message\": \"no such Account\"}";
 	}
 	
 	@Override
@@ -75,9 +75,9 @@ public class SongBirdDBRepository implements SongBirdRepository{
 				em.find(Account.class, userName).setEmail(anAccount.getEmail());
 			}
 			
-			return "{\"message\": \"account has been sucessfully Updated\"}";
+			return "{\"message\": \"Account has been sucessfully Updated\"}";
 		}		
-		return "{\"message\": \"no such account\"}";
+		return "{\"message\": \"no such Account\"}";
 	}
 
 	@Override

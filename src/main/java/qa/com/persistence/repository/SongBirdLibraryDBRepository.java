@@ -53,9 +53,9 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 	public String deleteASong(Long songId) {
 		if (manager.contains(manager.find(Song.class, songId))) {
 			manager.remove(manager.find(Song.class, songId));
-			return "{\"message\": \"account has been sucessfully deleted\"}";
+			return "{\"message\": \"Song has been sucessfully deleted\"}";
 		}
-		return "{\"message\": \"no such account\"}";
+		return "{\"message\": \"no such Song\"}";
 	}
 	
 
@@ -79,9 +79,9 @@ public class SongBirdLibraryDBRepository implements SongBirdLibraryRepository{
 			if (aSong.getUserName() != null) {
 				manager.find(Song.class, songId).setUserName(aSong.getUserName());
 			}
-			return "{\"message\": \"account has been sucessfully Updated\"}";
+			return "{\"message\": \"Song has been sucessfully updated\"}";
 		}		
-		return "{\"message\": \"no such account\"}";
+		return "{\"message\": \"no such Song\"}";
 	}
 
 	@Override

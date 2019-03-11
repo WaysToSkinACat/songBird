@@ -25,7 +25,12 @@ public class SongBirdLibraryEndpoint {
 	public String getAllSongs() {
 		return services.getAllSongs();
 	}
-
+	@Path("/getATrainee/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getASong(@PathParam("id") Long id) {
+		return services.getASong(id);
+	}
 	@Path("/createASong")
 	@POST
 	@Produces({ "application/json" })
@@ -46,4 +51,12 @@ public class SongBirdLibraryEndpoint {
 	public String updateASong(@PathParam("songId") Long songId, String song) {
 		return services.updateASong(songId, song);
 	}
+
+	public void setService(SongBirdLibraryService service) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 }
