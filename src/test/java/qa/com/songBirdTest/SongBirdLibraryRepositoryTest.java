@@ -23,7 +23,7 @@ import qa.com.util.JSONUtil;
 @RunWith(MockitoJUnitRunner.class)
 public class SongBirdLibraryRepositoryTest {
 
-	private static final String MOCK_ARRAY1 = "[{\"songName\":\"Joe\",\"bPM\":1,\"description\":\"a\",\"tubeLink\":\"b\"},{\"songName\":\"Jane\",\"bPM\":2,\"description\":\"a\",\"tubeLink\":\"b\"}]";
+	private static final String MOCK_ARRAY1 = "[{\"songName\":\"Joe\",\"bPM\":1,\"description\":\"a\",\"tubeLink\":\"b\"},{\"songName\":\"Jane\",\"bPM\":12,\"description\":\"a\",\"tubeLink\":\"b\"}]";
 
 	private static final String MOCK_ARRAY2 = "[{\"songName\":\"Joe\",\"bPM\":1,\"description\":\"a\",\"tubeLink\":\"b\"}]";
 
